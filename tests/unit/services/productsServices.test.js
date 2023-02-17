@@ -19,7 +19,7 @@ describe('Verificando service dos produtos', function () {
   it('retorna um erro caso receba um ID inválido', async function () {
       // Especificamente nesse it não temos um arranjo pois nesse fluxo o model não é chamado!
       const result = await productsService.getById('a');
-      expect(result.type).to.equal('INVALID_VALUE');
+      expect(result.type).to.equal('422');
       expect(result.message).to.equal('"id" must be a number');
     });
 
