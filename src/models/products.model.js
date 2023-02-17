@@ -15,4 +15,16 @@ const getById = async (productId) => {
   return product;
 };
 
-module.exports = { getAll, getById };
+const insert = async (products) => {
+  const columns = Object.keys((products)).join(', ');
+  const placeholders = Object.keys(products)
+    .map((_key) => '?')
+    .join(', ');
+  const [{ insertId }] = await connection.execute(
+    `INSERT INTO StoreManager.products (${columns}) VALUE (${placeholders})`,
+    [...Object.values(products)],
+  );
+  return insertId;
+};
+
+module.exports = { getAll, getById, insert };
