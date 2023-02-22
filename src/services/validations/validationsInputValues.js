@@ -1,3 +1,4 @@
+const productsModel = require('../../models/products.model');
 const { idSchema, addProductsSchema } = require('./schemas');
 
 const validateId = (id) => {
@@ -17,7 +18,14 @@ const validateNewProduct = (name) => {
   return { type: null, message: '' };
 };
 
+const valideIdSale = async (id) => {
+const result = await productsModel.getById(id);
+  if (!result) return { type: '404', message: 'Product not found' };
+  return { type: null, message: '' };
+};
+
 module.exports = {
   validateId,
   validateNewProduct,
+  valideIdSale,
 };
