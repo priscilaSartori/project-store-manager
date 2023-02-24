@@ -9,8 +9,8 @@ const validateId = (id) => {
 };
 
 const validateNewProduct = (name) => {
-  const { error } = addProductsSchema.validate({ name });
   if (!name) return { type: '400', message: { message: '"name" is required' } };
+  const { error } = addProductsSchema.validate({ name });
   if (error) {
  return {
     type: '422',
@@ -25,8 +25,26 @@ const result = await productsModel.getById(id);
   return { type: null, message: '' };
 };
 
+const validateUpdate = async (id, name) => {
+  if (!name) return { type: '400', message: { message: '"name" is required' } };
+
+  const { error } = addProductsSchema.validate({ name });
+  if (error) {
+    return {
+      type: '422',
+      message: { message: '"name" length must be at least 5 characters long' },
+    };
+  }
+  
+  const product = await productsModel.getById(id);
+  if (!product) return { type: '404', message: { message: 'Product not found' } };
+
+  return { type: null, message: '' };
+};
+
 module.exports = {
   validateId,
   validateNewProduct,
   valideIdSale,
+  validateUpdate,
 };

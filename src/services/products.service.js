@@ -22,4 +22,12 @@ const createProduct = async (name) => {
   return { type: null, message: newProduct };
 };
 
-module.exports = { getAll, getById, createProduct };
+const updateProduct = async (id, name) => {
+  const error = schema.validateUpdate(id, name);
+  if ((await error).type) return error;
+
+  const hasProduct = await productsModel.updateProduct(id, name);
+  return { type: null, message: hasProduct };
+};
+
+module.exports = { getAll, getById, createProduct, updateProduct };
