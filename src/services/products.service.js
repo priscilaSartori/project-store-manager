@@ -38,4 +38,11 @@ const deleteProduct = async (id) => {
     return { type: 204, message: '' };
 };
 
-module.exports = { getAll, getById, createProduct, updateProduct, deleteProduct };
+const searchProduct = async (q) => {
+  const allProducts = await getAll();
+  const productName = allProducts.message.filter((search) => search.name.includes(q));
+  if (productName) return { type: 200, message: productName };
+  return { type: 200, message: '' };
+};
+
+module.exports = { getAll, getById, createProduct, updateProduct, deleteProduct, searchProduct };
