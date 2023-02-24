@@ -1,5 +1,5 @@
 const salesModel = require('../models/sales.model');
-const { valideIdSale } = require('./validations/validationsInputValues');
+const { valideIdSale, validateUpdateSale } = require('./validations/validationsInputValues');
 
 const createSale = async (sales) => {
   const quantityNumber = sales.every((sale) => sale.quantity <= 0);
@@ -42,6 +42,20 @@ const deleteSales = async (id) => {
   return { type: 204, message: '' };
 };
 
+const updateSales = async (saleId, sales) => {
+  const error = validateUpdateSale(saleId, sales);
+  if ((await error).type) return error;
+
+  const sale = await salesModel.getById(saleId);
+  if (sale[0] === undefined) return { type: '404', message: { message: 'Sale not found' } };
+
+  const itemsUpdated = await Promise.all(sales.map(({ productId, quantity }) => {
+    salesModel.updateSales(saleId, productId, quantity);
+    return { productId, quantity };
+  }));
+  return { type: null, message: { saleId, itemsUpdated } };
+};
+
 module.exports = {
-  createSale, getAll, getById, deleteSales,
+  createSale, getAll, getById, deleteSales, updateSales,
 };
