@@ -17,13 +17,23 @@ const createSale = async (sales) => {
 
   const id = await salesModel.insert();
   const itemsSold = await Promise.all(sales.map(({ productId, quantity }) => {
-      salesModel.insertProduct(id, productId, quantity);
+    salesModel.insertProduct(id, productId, quantity);
     return { productId, quantity };
-    }));
-
+  }));
   return { type: null, message: { id, itemsSold } };
 };
 
+const getAll = async () => {
+  const allSales = await salesModel.getAll();
+  return { type: null, message: allSales };
+};
+
+const getById = async (saleId) => {
+  const sale = await salesModel.getById(saleId);
+  if (sale[0] === undefined) return { type: '404', message: { message: 'Sale not found' } };
+  return { type: null, message: sale };
+};
+
 module.exports = {
-  createSale,
+  createSale, getAll, getById,
 };

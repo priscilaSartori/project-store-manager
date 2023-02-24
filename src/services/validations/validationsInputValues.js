@@ -1,4 +1,5 @@
 const productsModel = require('../../models/products.model');
+// const salesModel = require('../../models/sales.model');
 const { idSchema, addProductsSchema } = require('./schemas');
 
 const validateId = (id) => {
