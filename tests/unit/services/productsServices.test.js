@@ -2,16 +2,15 @@ const { expect } = require('chai');
 const sinon = require('sinon');
 const productsModel = require('../../../src/models/products.model');
 const productsService = require('../../../src/services/products.service');
-
-const { allProducts } = require('./mocks/products.service.mock');
+const { allProductsResponse, productCreateResponse, productUpdateBody, rightProductBody, productSearchNameResponse, wrongSizeProductBody } = require('../../../__tests__/_dataMock');
 
 describe('Verificando service dos produtos', function () {
   describe('listagem dos produtos', function () {
     it('retorna a lista completa dos produtos', async function () {
-      sinon.stub(productsModel, 'getAll').resolves(allProducts);
+      sinon.stub(productsModel, 'getAll').resolves(allProductsResponse);
       const result = await productsService.getAll();
       expect(result.type).to.be.equal(null);
-      expect(result.message).to.deep.equal(allProducts);
+      expect(result.message).to.deep.equal(allProductsResponse);
     });
   });
   
@@ -31,14 +30,14 @@ describe('Verificando service dos produtos', function () {
     // });
     
     it('retorna o produto caso o ID seja existente', async function () {
-      sinon.stub(productsModel, 'getById').resolves(allProducts[0]);
+      sinon.stub(productsModel, 'getById').resolves(allProductsResponse[0]);
       const result = await productsService.getById(1);
       expect(result.type).to.equal(null);
-      expect(result.message).to.deep.equal(allProducts[0]);
-    });
-});
+      expect(result.message).to.deep.equal(allProductsResponse[0]);
+    }); 
+  });
   
-   afterEach(function () {
-     sinon.restore();
-   });
+  afterEach(function () {
+    sinon.restore();
+  });
  });

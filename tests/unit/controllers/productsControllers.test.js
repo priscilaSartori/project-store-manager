@@ -84,6 +84,30 @@ describe('Teste de unidade do productsController', function () {
       expect(res.json).to.have.been.calledWith( { message: 'Product not found' });
     });
 
+  it('Crie endpoint para cadastrar produtos', async function () {
+    // sinon.stub(connection, 'execute').resolves([[products[0]]]);
+    // const result = await productsModel.getById(1);
+    // expect(result).to.be.deep.equal(products[0]);
+  });
+
+  it('Crie endpoint para atualizar um produto', async function () {
+    // sinon.stub(connection, 'execute').resolves([[products[0]]]);
+    // const result = await productsModel.getById(1);
+    // expect(result).to.be.deep.equal(products[0]);
+  });
+
+  it('Crie endpoint para deletar um produto', async function () {
+    // sinon.stub(connection, 'execute').resolves([[products[0]]]);
+    // const result = await productsModel.getById(1);
+    // expect(result).to.be.deep.equal(products[0]);
+  });
+
+  it('Crie endpoint products/search?q=searchTerm', async function () {
+    // sinon.stub(connection, 'execute').resolves([[products[0]]]);
+    // const result = await productsModel.getById(1);
+    // expect(result).to.be.deep.equal(products[0]);
+  });
+  
   afterEach(function () {
     sinon.restore();
   });
