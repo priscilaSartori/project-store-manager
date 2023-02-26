@@ -3,7 +3,7 @@ const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 const { expect } = chai;
 chai.use(sinonChai);
-const { allProductsResponse, saleCreateResponse, updateSaleResponse, updatesale } = require('../../../__tests__/_dataMock');
+const { saleCreateResponse, updateSaleResponse, updatesale } = require('../../../__tests__/_dataMock');
 const salesController = require('../../../src/controllers/sales.controller');
 const salesService = require('../../../src/services/sales.service');
 
