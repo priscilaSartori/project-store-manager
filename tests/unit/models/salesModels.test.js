@@ -32,7 +32,6 @@ describe("Teste de unidade do salesModels", () => {
   // it("Crie endpoint para atualizar uma venda, será validado que a venda foi alterada no banco de dados", async () => {
   //   sinon.stub(connection, "execute").resolves(allSaleResponse[0]);
   //   const result = await salesModel.updateSales(1, 1, 1);
-  //   console.log(result)
   //   expect(result).to.be.deep.equal(updateSaleResponse);
   // });
 
