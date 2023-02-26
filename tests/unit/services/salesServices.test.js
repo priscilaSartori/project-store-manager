@@ -13,6 +13,10 @@ describe("Teste de unidade do salesService", () => {
     expect(result.message).to.be.deep.equal(saleCreateResponse);
   });
 
+  afterEach(function () {
+   sinon.restore();
+  });
+  
   it("Crie endpoints para listar vendas, será validado que é possível listar todas as vendas", async () => {
     sinon.stub(salesModel, "getAll").resolves(allSaleResponse);
     const result = await salesService.getAll();
@@ -21,6 +25,10 @@ describe("Teste de unidade do salesService", () => {
     expect(result.message).to.be.deep.equal(allSaleResponse);
   });
 
+  afterEach(function () {
+   sinon.restore();
+  });
+  
   it("Crie endpoints para listar vendas, será validado que é possível listar uma venda específica com sucesso", async () => {
     sinon.stub(salesModel, "getById").resolves(idSaleResponse);
     const result = await salesService.getById(2);
@@ -28,11 +36,19 @@ describe("Teste de unidade do salesService", () => {
     expect(result.message).to.be.deep.equal(idSaleResponse);
   });
 
+  afterEach(function () {
+   sinon.restore();
+  });
+
   it("Crie endpoint para deletar uma venda, será validado que a venda foi removida do banco de dados", async () => {
     sinon.stub(salesModel, "deleteSales").resolves(allSaleResponse);
     const result = await salesService.deleteSales(1);
     expect(result.type).to.be.deep.equal(204);
     expect(result.message).to.be.deep.equal('');
+  });
+
+  afterEach(function () {
+   sinon.restore();
   });
 
   it("Crie endpoint para atualizar uma venda, será validado que a venda foi alterada no banco de dados", async () => {
