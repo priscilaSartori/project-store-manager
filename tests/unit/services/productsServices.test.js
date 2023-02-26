@@ -2,7 +2,7 @@ const { expect } = require('chai');
 const sinon = require('sinon');
 const productsModel = require('../../../src/models/products.model');
 const productsService = require('../../../src/services/products.service');
-const { allProductsResponse, productCreateResponse, productUpdateBody, rightProductBody, productSearchNameResponse, wrongSizeProductBody } = require('../../../__tests__/_dataMock');
+const { allProductsResponse, productCreateResponse, productUpdateBody, rightProductBody, productSearchNameResponse, wrongSizeProductBody } = require('../mocks/products.mock');
 
 describe('Teste de unidade do productsService', function () {
   it('retorna a lista completa dos produtos', async function () {

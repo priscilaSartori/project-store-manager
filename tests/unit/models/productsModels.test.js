@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
 const productsModel = require('../../../src/models/products.model');
-const { allProductsResponse, rightProductBody, productCreateResponse, productUpdateBody } = require('../../../__tests__/_dataMock');
+const { allProductsResponse, rightProductBody, productCreateResponse, productUpdateBody } = require('../mocks/products.mock');
 const connection = require('../../../src/models/connection');
 
 describe('Teste de unidade do productsModel', function () {

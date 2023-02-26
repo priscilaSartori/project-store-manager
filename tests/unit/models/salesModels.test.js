@@ -2,7 +2,7 @@ const { expect } = require('chai');
 const sinon = require('sinon');
 const connection = require('../../../src/models/connection');
 const salesModel = require('../../../src/models/sales.model');
-const { rightSaleBody, saleCreateResponse, allSaleResponse, deleteSaleResponse, updateSaleResponse, idSaleResponse } = require('../../../__tests__/_dataMock');
+const { rightSaleBody, saleCreateResponse, allSaleResponse, deleteSaleResponse, updateSaleResponse, idSaleResponse } = require('../mocks/sales.mock');
 
 describe("Teste de unidade do salesModels", () => {
   it("Crie endpoint para validar e cadastrar vendas, será validado que é possível cadastrar uma venda com sucesso", async () => {
