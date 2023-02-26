@@ -1,24 +1,6 @@
 # Boas-vindas ao repositório do Projeto Store Manager!
 
-Para realizar o projeto, atente-se a cada passo descrito a seguir, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
-
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
-
-## Termos e acordos
-
-Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta e do Manual da Pessoa Estudante da Trybe.
-
 # Entregáveis
-
-<details>
-  <summary><strong>🤷🏽‍♀️ Como entregar</strong></summary>
-
-Para entregar o seu projeto você deverá criar um _Pull Request_ neste repositório.
-
-Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/module/fc998c60-386e-46bc-83ca-4269beb17e17/section/fe827a71-3222-4b4d-a66f-ed98e09961af/day/35e03d5e-6341-4a8c-84d1-b4308b2887ef/lesson/573db55d-f451-455d-bdb5-66545668f436) e nosso [Blog - Git & GitHub](https://blog.betrybe.com/tecnologia/git-e-github/) sempre que precisar!
-
-  <br />
-</details>
 
 <details>
   <summary><strong>👨‍💻 O que deverá ser desenvolvido</strong></summary>
@@ -30,16 +12,7 @@ A API a ser construída é um sistema de gerenciamento de vendas no formato drop
   <br />
 </details>
 
-<details>
-  <summary><strong>🗓 Data de Entrega</strong></summary>
-
-- Este projeto é individual
-- Serão `5` dias de projeto
-- Data de entrega para avaliação em prazo regular do projeto: `03/03/2023 14:00h`
-
-</details>
-
- <br />
+<br />
 
 # Orientações
 
@@ -211,53 +184,6 @@ A API a ser construída é um sistema de gerenciamento de vendas no formato drop
 </details>
 
 <details>
-  <summary><strong>⌨️ Durante o desenvolvimento</strong></summary>
-
-#### :warning: PULL REQUESTS COM ISSUES NO LINTER NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!
-
-- Faça `commits` das alterações que você fizer no código regularmente
-
-- Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
-
-- Os comandos que você utilizará com mais frequência são:
-
-  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
-  2. `git add` _(para adicionar arquivos ao stage do Git)_
-  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
-
-    <br />
-  </details>
-
-<details>
-  <summary><strong>🤝 Depois de terminar o desenvolvimento (opcional)</strong></summary>
-
-Para **"entregar"** seu projeto, siga os passos a seguir:
-
-- Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  - No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  - No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`
-
-Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
-:warning: **Lembre-se que garantir que todas as _issues_ comentadas pelo _Lint_ estão resolvidas!**
-
-  <br />
-</details>
-
-<details>
-  <summary><strong>🕵🏿 Revisando um pull request</strong></summary>
-
-À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests de colegas. Fique atento às mensagens do "Pull Reminders" no Slack!
-
-Use o material que você já viu sobre [Code Review](https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/module/f04cdb21-382e-4588-8950-3b1a29afd2dd/section/b3af2f05-08e5-4b4a-9667-6f5f729c351d/lesson/36268865-fc46-40c7-92bf-cbded9af9006) para te ajudar a revisar os projetos que chegaram para você.
-
-  <br />
-</details>
-
-<details>
   <summary><strong>🛠 Execução de testes localmente</strong></summary>
 
 > :information_source: IMPORTANTE
@@ -277,20 +203,6 @@ Para este projeto você pode rodar os testes das seguintes maneiras.
 
   <br />
 
-</details>
-
-<details>
-  <summary><strong>🎛 Linter</strong></summary>
-
-Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu código.
-
-Este projeto já vem com as dependências relacionadas ao _linter_ configuradas no arquivos `package.json`.
-
-Para poder rodar os `ESLint` em um projeto basta executar o comando `npm install` dentro do projeto e depois `npm run lint`. Se a análise do `ESLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
-
-Você pode também instalar o plugin do `ESLint` no `VSCode`, basta baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) e instalá-lo
-
-  <br />
 </details>
 
 <details>
@@ -456,25 +368,6 @@ Você pode também instalar o plugin do `ESLint` no `VSCode`, basta baixar o [pl
   </details>
 
 <details>
-  <summary id="dicas"><strong>👀 Dicas</strong></summary>
-
-- Para gerar os objetos de erro personalizados, você pode utilizar uma biblioteca de erros, como o [`boom`](https://www.npmjs.com/package/@hapi/boom) ou [`restify-errors`](https://www.npmjs.com/package/restify-errors);
-
-- Você pode utilizar middlewares e objetos de erro personalizados para que não tenha que repetir a lógica de tratamento de erro em vários lugares. Não se esqueça também do [`express-async-errors`](https://www.npmjs.com/package/express-async-errors), ele pode facilitar muito o trabalho de tratar erros;
-
-- Quando estiver na dúvida sobre qual status HTTP utilizar, você pode consultar a [documentação sobre o assunto no MDN](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status). Com o tempo, você vai lembrar com facilidade o significado dos códigos mais comuns;
-
-- Para realizar a validação dos dados, você pode utilizar pacotes como [`Joi`](https://www.npmjs.com/package/joi) ou o [`Expresso Validator`](https://www.npmjs.com/package/@expresso/validator). Caso prefira, você também pode realizar a validação de forma manual.
-
-- Para este projeto, você vai precisar realizar a inserção de dados em mais de uma tabela. Para isso, é importante você praticar e recorrer a leitura do conteúdo, rever as aulas ao vivo e fazer os exercícios dos dias:
-  - `Arquitetura de Software: Camada Model`;
-  - `Arquitetura de Software: Camada Service`.
-
-  <br />
-
-</details>
-
-<details>
   <summary id="diagrama-scripts"><strong>🎲 Diagrama ER, Entidades e Scripts</strong></summary>
 
 #### Diagrama de Entidade-Relacionamento
@@ -596,27 +489,6 @@ A tabela `sales_products`, é a tabela que faz o relacionamento `N:N` entre `pro
 
   <br />
 
-</details>
-
-<details>
-  <summary><strong>🗣 Nos dê feedbacks sobre o projeto!</strong></summary>
-
-Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário.
-**Leva menos de 3 minutos!**
-
-[FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
-
-:warning: **O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?**
-
-  <br />
-</details>
-
-<details>
-  <summary><strong>🗂 Compartilhe seu portfólio!</strong></summary>
-
-Você sabia que o LinkedIn é a principal rede social profissional e compartilhar o seu aprendizado lá é muito importante para quem deseja construir uma carreira de sucesso? Compartilhe esse projeto no seu LinkedIn, marque o perfil da Trybe (@trybe) e mostre para a sua rede toda a sua evolução.
-
-  <br />
 </details>
 
 # Requisitos Obrigatórios
