@@ -4,8 +4,7 @@ const productsModel = require('../../../src/models/products.model');
 const productsService = require('../../../src/services/products.service');
 const { allProductsResponse, productCreateResponse, productUpdateBody, rightProductBody, productSearchNameResponse, wrongSizeProductBody } = require('../../../__tests__/_dataMock');
 
-describe('Verificando service dos produtos', function () {
-  
+describe('Teste de unidade do productsService', function () {
   it('retorna a lista completa dos produtos', async function () {
     sinon.stub(productsModel, 'getAll').resolves(allProductsResponse);
     const result = await productsService.getAll();
