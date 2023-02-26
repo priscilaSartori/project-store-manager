@@ -12,21 +12,18 @@ describe("Teste de unidade do salesService", () => {
     expect(result.type).to.be.deep.equal(null);
     expect(result.message).to.be.deep.equal(saleCreateResponse);
   });
-
   afterEach(function () {
    sinon.restore();
   });
+});
   
+  describe("Teste de unidade do salesService", () => {
   it("Crie endpoints para listar vendas, será validado que é possível listar todas as vendas", async () => {
     sinon.stub(salesModel, "getAll").resolves(allSaleResponse);
     const result = await salesService.getAll();
     console.log(result)
     expect(result.type).to.be.deep.equal(null);
     expect(result.message).to.be.deep.equal(allSaleResponse);
-  });
-
-  afterEach(function () {
-   sinon.restore();
   });
   
   it("Crie endpoints para listar vendas, será validado que é possível listar uma venda específica com sucesso", async () => {
@@ -39,7 +36,9 @@ describe("Teste de unidade do salesService", () => {
   afterEach(function () {
    sinon.restore();
   });
+  });
 
+  describe("Teste de unidade do salesService", () => {
   it("Crie endpoint para deletar uma venda, será validado que a venda foi removida do banco de dados", async () => {
     sinon.stub(salesModel, "deleteSales").resolves(allSaleResponse);
     const result = await salesService.deleteSales(1);
@@ -50,7 +49,9 @@ describe("Teste de unidade do salesService", () => {
   afterEach(function () {
    sinon.restore();
   });
-
+});
+    
+  describe("Teste de unidade do salesService", () => {
   it("Crie endpoint para atualizar uma venda, será validado que a venda foi alterada no banco de dados", async () => {
     sinon.stub(salesModel, 'updateSales').resolves(updatesale);
     const result = await salesService.updateSales(1, updateSaleResponse);
