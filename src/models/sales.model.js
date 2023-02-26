@@ -43,6 +43,7 @@ const deleteSales = async (id) => {
     'DELETE FROM StoreManager.sales WHERE id = ?',
     [id],
   );
+  return { id };
 };
 
 const updateSales = async (saleId, productId, quantity) => {

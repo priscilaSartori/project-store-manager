@@ -27,7 +27,9 @@ describe('Verificando service dos produtos', function () {
   }); 
 
   it('Crie endpoint para cadastrar produtos', async function () {
-    const result = await productsService.createProduct(rightProductBody.name);
+    sinon.stub(productsModel, 'insert').resolves(rightProductBody);
+    sinon.stub(productsModel, 'getById').resolves(productCreateResponse);
+    const result = await productsService.createProduct('Produto1');
     expect(result.type).to.be.equal(null);
     expect(result.message).to.deep.equal(productCreateResponse);
   });
